@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+.animate-text-slide-3 {
+    animation: text-slide-3 10s ease-in-out infinite;
+}
+
+@keyframes text-slide-3 {
+    0%,
+    26.66% {
+        transform: translateY(0%);
+    }
+    33.33%,
+    60% {
+        transform: translateY(-25%);
+    }
+    66.66%,
+    93.33% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(-75%);
+    }
+}
+
+.animate-text-slide-4 {
+    animation: text-slide-4 10s ease-in-out infinite;
+}
+
+@keyframes text-slide-4 {
+    0%,
+    20% {
+        transform: translateY(0%);
+    }
+    25%,
+    45% {
+        transform: translateY(-20%);
+    }
+    50%,
+    70% {
+        transform: translateY(-40%);
+    }
+    75%,
+    95% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+.animate-text-slide-5 {
+    animation: text-slide-5 10s ease-in-out infinite;
+}
+
+@keyframes text-slide-5 {
+    0%,
+    16% {
+        transform: translateY(0%);
+    }
+    20%,
+    36% {
+        transform: translateY(-16.66%);
+    }
+    40%,
+    56% {
+        transform: translateY(-33.33%);
+    }
+    60%,
+    76% {
+        transform: translateY(-50%);
+    }
+    80%,
+    96% {
+        transform: translateY(-66.66%);
+    }
+    100% {
+        transform: translateY(-83.33%);
+    }
+}
+
+@theme {
+    --color-barbie: oklch(60.09% 0.2501 350.73);
+    --color-barbie1: oklch(60.09% 0.2501 334.9);
+    --color-corn: oklch(93.36% 0.1721 102.78);
+    --color-radical: oklch(64.31% 0.2461 15.7907);
+    --color-violet: oklch(45.61% 0.23 310.51);
+    --font-sans: Poppins, sans-serif;
+}
+
+@layer utilities {
+    body {
+        @apply antialiased;
+    }
+    h1 {
+        @apply text-2xl font-bold;
+    }
+    h2 {
+        @apply text-xl font-bold;
+    }
+    h3 {
+        @apply text-lg font-bold;
+    }
+    h4 {
+        @apply text-base font-bold;
+    }
+    a {
+        @apply text-blue-400 no-underline;
+    }
+    a:hover {
+        @apply text-(--color-corn);
+    }
+}

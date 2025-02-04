@@ -25,4 +25,4 @@ $ npm install
 $ npm run dev
 ```
 
-You should now have a local webserver running the website at [http://localhost:3000]().
+You should now have a local webserver running the website at [](http://localhost:3000).

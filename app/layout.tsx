@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/700.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Nice Rhino - A champion by your side",
@@ -21,6 +22,7 @@ export default function RootLayout({
         className="bg-slate-950 text-slate-200 scroll-smooth antialiased"
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );

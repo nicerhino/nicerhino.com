@@ -341,7 +341,7 @@ function AboutUs() {
   );
 }
 
-export function ConnectWithUs() {
+function ConnectWithUs() {
   return (
     <section id="connect-with-us" className="py-24 sm:py-32">
       <div className="relative isolate">

@@ -5,7 +5,7 @@ import "@fontsource/poppins/700.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Nice Rhino - A champion by your side",
+  title: "Nice Rhino - a champion by your side",
   description:
     "An Australian consultancy that provides advice, ideas and support when you need them most.",
 };

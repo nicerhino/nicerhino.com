@@ -63,7 +63,7 @@ export default function Footer() {
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-sm/6 text-gray-400">
+        <p className="mt-10 text-center text-xs text-gray-400">
           &copy; {currentYear} Nice Rhino Pty Ltd • ABN: {nicerhino.abn} • ACN: {nicerhino.acn}
         </p>
       </div>

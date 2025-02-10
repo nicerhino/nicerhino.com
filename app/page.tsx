@@ -12,6 +12,21 @@ import {
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+const people = [
+  {
+    name: "John Park",
+    role: "Principal Consultant",
+    imageUrl: "/images/mugshot-john.svg",
+    bio: "John is an experienced operations and logistics leader with a strong track record in tech leadership, having spent the last five years as an executive driving strategic growth.\n\nSkilled in large-scale digital transformation and operational integration during mergers, ownership transitions, John brings a sharp focus on efficiency, innovation, and business scalability.",
+  },
+  {
+    name: "Pete Hayes",
+    role: "Principal Consultant",
+    imageUrl: "/images/mugshot-pete.svg",
+    bio: "A software engineer by trade, Pete has spent his career in tech leadership, helping form strategy and implementation for some of the world's largest institutions, including Crossrail, HSBC and Lloyd's Bank.\n\nPete has a business degree and two startups under his belt.",
+  },
+];
+
 function Divider() {
   return (
     <div className="w-full h-px max-w-6xl mx-auto bg-gradient-to-r from-slate-950 via-radical to-slate-950"></div>
@@ -20,15 +35,15 @@ function Divider() {
 
 function Hero() {
   return (
-    <section className="h-screen bg-[url(/images/hero-rhino.svg)] bg-no-repeat bg-right-bottom md:bg-contain">
+    <section className="h-screen bg-[url(/images/hero-rhino.svg)] bg-no-repeat bg-right-bottom bg-contain">
       <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
           <h1 className="mt-10 text-5xl font-bold tracking-tight sm:text-7xl">
-            When you need a&nbsp;
+            When you need a{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-(--color-barbie) to-(--color-barbie1)">
               champion
-            </span>
-            &nbsp;by your side
+            </span>{" "}
+            by your side
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-(--color-barbie) to-(--color-barbie1)">
               .
             </span>
@@ -85,8 +100,9 @@ function Testimonial() {
         <figure className="mt-10">
           <blockquote className="text-center text-xl/8 font-semibold sm:text-2xl/9">
             <p>
-              “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa
-              sapiente alias molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+              “Nice Rhino’s ability to blend deep business understanding with practical, actionable
+              solutions made all the difference. We couldn’t have asked for a better partner in
+              shaping the future of Koorong’s online presence.”
             </p>
           </blockquote>
           <figcaption className="mt-10">
@@ -98,7 +114,7 @@ function Testimonial() {
               className="mx-auto rounded-full"
             />
             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold">David Foster</div>
+              <div className="font-semibold">David&nbsp;Foster</div>
               <svg
                 viewBox="0 0 2 2"
                 width="3"
@@ -108,7 +124,7 @@ function Testimonial() {
               >
                 <circle cx="1" cy="1" r="1" />
               </svg>
-              <div className="text-gray-300">Chief Retail Officer at Koorong</div>
+              <div className="text-gray-300">Chief&nbsp;Retail&nbsp;Officer at Koorong</div>
             </div>
           </figcaption>
         </figure>
@@ -215,9 +231,9 @@ function ProblemSolving() {
 
 function Growth() {
   return (
-    <section id="growth" className="py-12 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
+    <section id="growth" className="overflow-hidden py-12 sm:py-32">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+        <div className="max-w-4xl">
           <p className="text-base/7 font-semibold text-indigo-600">Growth</p>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
             Getting you to the <span className="text-radical">next level.</span>
@@ -286,120 +302,115 @@ function Growth() {
 
 function AboutUs() {
   return (
-    <section id="about-us" className="py-12 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="about-us" className="overflow-hidden py-24 sm:py-32">
+      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <div className="max-w-4xl">
           <p className="text-base/7 font-semibold text-indigo-600">About Us</p>
           <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
             <span className="text-radical">Who are we</span> to tell you what to do?
           </h1>
-          <p className="mt-6 text-xl/8 text-balance text-gray-400">
-            We&apos;re a &ldquo;dynamic duo&rdquo; (our words) that love solving problems and
-            collaborating with likeminded people. Our mission is to help organisations that truly
-            desire change.
+          <p className="mt-6 text-lg/8 text-gray-400">
+            We&apos;re a <span className="italic">&lsquo;dynamic duo&rsquo;</span> (our words) that
+            love solving problems and collaborating with likeminded people. Our mission is to help
+            organisations that truly desire change.
           </p>
         </div>
         <ul
           role="list"
           className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none"
         >
-          <li className="flex flex-col gap-6 xl:flex-row">
-            <Image
-              src="/images/mugshot-john.svg"
-              alt="John's photo"
-              className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
-              width="208"
-              height="304"
-            />
-            <div className="flex-auto">
-              <h3 className="text-lg/8 font-semibold tracking-tight">John Park</h3>
-              <p className="text-base/7 text-gray-400">Principal Consultant</p>
-              <p className="mt-6 text-base/7 text-gray-400"></p>
-            </div>
-          </li>
-          <li className="flex flex-col gap-6 xl:flex-row">
-            <Image
-              src="/images/mugshot-pete.svg"
-              alt="Pete's photo"
-              className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
-              width="208"
-              height="304"
-            />
-            <div className="flex-auto">
-              <h3 className="text-lg/8 font-semibold tracking-tight">Pete Hayes</h3>
-              <p className="text-base/7 text-gray-400">Principal Consultant</p>
-              <p className="mt-6 text-base/7 text-gray-400">
-                A software engineer by trade, Pete has spent his career in tech leadership, helping
-                form strategy and implementation for some of the world&apos;s largest institutions,
-                including Crossrail, HSBC and Lloyd&apos;s Bank.
-              </p>
-              <p className="mt-6 text-base/7 text-gray-400">
-                Pete has a business degree and two startups under his belt.
-              </p>
-            </div>
-          </li>
+          {people.map((person) => (
+            <li key={person.name} className="flex flex-col gap-6 xl:flex-row">
+              <Image
+                alt={`${person.name}'s photo`}
+                src={person.imageUrl}
+                className="aspect-4/5 w-52 flex-none rounded-2xl object-cover"
+                width="52"
+                height="52"
+              />
+              <div className="flex-auto">
+                <h3 className="text-lg/8 font-semibold tracking-tight">{person.name}</h3>
+                <p className="text-base/7">{person.role}</p>
+                <p className="mt-6 text-base/7 text-gray-400 whitespace-pre-wrap">{person.bio}</p>
+              </div>
+            </li>
+          ))}
         </ul>
       </div>
     </section>
   );
 }
 
-function ConnectWithUs() {
+export function ConnectWithUs() {
   return (
-    <section id="connect-with-us" className="py-12 sm:py-32">
+    <section id="connect-with-us" className="py-24 sm:py-32">
       <div className="relative isolate">
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-          <div className="mx-auto flex max-w-2xl gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20 text-center">
-            <div className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-              <span className="inline-flex flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] sm:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
-                <ul className="block animate-text-slide-5 text-right leading-tight [&_li]:block text-corn">
-                  <li>Advice</li>
-                  <li>Guidance</li>
-                  <li>Direction</li>
-                  <li>Creativity</li>
-                  <li>Support</li>
-                  <li aria-hidden="true">Advice</li>
-                </ul>
-              </span>
-              &nbsp;when you need it most.
-            </div>
-            <div className="mt-6 text-lg/8 text-gray-300">
-              Whatever your situation or your goals, we&apos;d love to talk it through. No
-              obligations. No sales pitch. No nonsense.
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <dt className="flex-none">
-                  <span className="sr-only">Telephone</span>
-                  <PhoneIcon aria-hidden="true" className="size-6" />
-                </dt>
-                <dd>
-                  <Link href="tel:+61272574433">(02) 7257 4433</Link>
-                </dd>
-                <dt className="flex-none">
-                  <span className="sr-only">Email</span>
-                  <EnvelopeIcon aria-hidden="true" className="size-6" />
-                </dt>
-                <dd>
-                  <Link href="mailto:hello@nicerhino.com">hello@nicerhino.com</Link>
-                </dd>
-              </div>
-              <div className="text-xs text-gray-500 text-center mt-10">
-                Our office hours are from 9am - 5.30pm, Monday - Friday, Australian Eastern Standard
-                Time (AEST).
+          <div className="mx-auto flex max-w-2xl flex-col gap-16 bg-white/5 px-6 py-16 ring-1 ring-white/10 sm:rounded-3xl sm:p-8 lg:mx-0 lg:max-w-none lg:flex-row lg:items-center lg:py-20 xl:gap-x-20 xl:px-20">
+            <Image
+              alt="Woman presenting in meeting"
+              src="/images/stock/presentation.jpg"
+              className="h-96 w-full flex-none rounded-2xl object-cover shadow-xl lg:aspect-square lg:h-auto lg:max-w-sm"
+              width="1500"
+              height="1099"
+            />
+            <div className="w-full flex-auto">
+              <h1 className="text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
+                <div className="flex-col h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] sm:h-[calc(theme(fontSize.5xl)*theme(lineHeight.tight))] overflow-hidden">
+                  <ul className="block animate-text-slide-5 leading-tight [&_li]:block text-corn">
+                    <li>Advice.</li>
+                    <li>Guidance.</li>
+                    <li>Direction.</li>
+                    <li>Creativity.</li>
+                    <li>Support.</li>
+                    <li aria-hidden="true">Advice.</li>
+                  </ul>
+                </div>
+                When you need it most.
+              </h1>
+
+              <div className="mt-6 text-lg/8 text-gray-300">
+                Whatever your situation or your goals, we&apos;d love to talk it through. No
+                obligations. No sales pitch. No nonsense.
+                <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6">
+                  <div className="flex gap-x-3 align-text-top">
+                    <dt>
+                      <span className="sr-only">Telephone</span>
+                      <PhoneIcon aria-hidden="true" className="size-6" />
+                    </dt>
+                    <dd>
+                      <Link href="tel:+61272574433">(02)&nbsp;7257&nbsp;4433</Link>
+                    </dd>
+                  </div>
+                  <div className="flex gap-x-3">
+                    <dt>
+                      <span className="sr-only">Email</span>
+                      <EnvelopeIcon aria-hidden="true" className="size-6" />
+                    </dt>
+                    <dd>
+                      <Link href="mailto:hello@nicerhino.com">hello@nicerhino.com</Link>
+                    </dd>
+                  </div>
+                </div>
+                <div className="text-xs text-gray-500 text-center mt-10">
+                  Our office hours are from 9am - 5.30pm, Monday - Friday, Australian Eastern
+                  Standard Time (AEST).
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div
-          className="absolute inset-x-8 -top-0 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
           aria-hidden="true"
+          className="absolute inset-x-0 -top-16 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
         >
           <div
-            className="aspect-1318/392 w-[82.375rem] flex-none bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
             style={{
               clipPath:
-                "polygon(73.6% 51.7%,91.7% 11.8%,100% 46.4%,97.4% 82.2%,92.5% 84.9%,75.7% 64%,55.3% 47.5%,46.5% 49.4%,45% 62.9%,50.3% 87.2%,21.3% 64.1%,0.1% 100%,5.4% 51.1%,21.4% 63.9%,58.9% 0.2%,73.6% 51.7%)",
+                "polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)",
             }}
-          ></div>
+            className="aspect-1318/752 w-[82.375rem] flex-none bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-25"
+          />
         </div>
       </div>
     </section>

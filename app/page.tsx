@@ -98,73 +98,73 @@ function Hero() {
   );
 }
 
-function Testimonial() {
-  return (
-    <section
-      id="testimonial"
-      className="px-6 py-12 sm:py-32 lg:px-8"
-      style={{
-        backgroundImage:
-          "radial-gradient(at 71% 2%, transparent 0%, transparent 60%), radial-gradient(at 34% 43%, oklch(25% 0.2501 350.73) 0%, transparent 40%), radial-gradient(at 56% 67%, oklch(20% 0.2501 350.73) 0%, transparent 30%)",
-      }}
-    >
-      <div className="mx-auto max-w-2xl lg:max-w-4xl">
-        <svg
-          version="1.1"
-          fill="#ED3641"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="44.52 218.89 703.36 179.35"
-          xmlSpace="preserve"
-          width="190px"
-          className="mx-auto"
-        >
-          <g>
-            <path
-              className="logo"
-              d="M207.33 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.13 0 48.7 15.84 48.7 47.31.01 31.48-22.56 47.32-48.7 47.32m19.8-47.32c0-17.22-9.1-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M313.67 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.13 0 48.7 15.84 48.7 47.31 0 31.48-22.57 47.32-48.7 47.32m19.79-47.32c0-17.22-9.11-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M492.87 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.14 0 48.71 15.84 48.71 47.31-.01 31.48-22.58 47.32-48.71 47.32m19.79-47.32c0-17.22-9.1-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M610.68 357.47v-52.66c0-7.92-1.38-15.84-12.07-15.84-10.69 0-15.04 7.92-15.04 20.98v47.52h-28.51v-89.88h26.53l1.98 11.88c6.73-10.69 16.04-14.25 25.94-14.25 17.81 0 29.7 11.48 29.7 31.28v60.98h-28.53zM44.52 218.89v138.58h30.5V218.89z"
-            />
-            <path
-              className="logo"
-              d="M108.76 288.18l53.65-69.29h-32.07l-55.32 69.29 54.13 69.3h34.64zM721.36 267.59l-1.98 12.27c-4.36-9.9-13.66-14.65-25.34-14.65-21.78 0-41.97 16.43-41.97 46.72 0 28.31 17.62 45.53 39.99 45.53 11.09 0 20.79-4.16 27.32-14.06v12.87c0 14.06-7.53 19.01-18.41 19.01-7.99 0-19.48-2.74-29.05-8.59l-14.89 18.65c1.96 1.49 17.8 12.9 43.14 12.9 31.28 0 47.71-17.42 47.71-44.35v-86.32h-26.52zm-20.98 66.92c-9.31 0-19.4-5.15-19.4-23.16 0-19.4 11.68-23.17 19.79-23.17 9.31 0 19.01 5.15 19.01 23.17 0 19.4-11.29 23.16-19.4 23.16M430.65 293.83l14.27-17.87c-3.61-6.13-10.03-9.96-18.39-9.96-9.7 0-18.22 5.15-22.17 14.26l-1.98-12.67h-26.52v89.88h28.51v-45.73c0-14.65 6.13-21.38 15.04-21.38 4.96 0 9.03 2.06 11.24 3.47"
-            />
-          </g>
-        </svg>
+// function Testimonial() {
+//   return (
+//     <section
+//       id="testimonial"
+//       className="px-6 py-12 sm:py-32 lg:px-8"
+//       style={{
+//         backgroundImage:
+//           "radial-gradient(at 71% 2%, transparent 0%, transparent 60%), radial-gradient(at 34% 43%, oklch(25% 0.2501 350.73) 0%, transparent 40%), radial-gradient(at 56% 67%, oklch(20% 0.2501 350.73) 0%, transparent 30%)",
+//       }}
+//     >
+//       <div className="mx-auto max-w-2xl lg:max-w-4xl">
+//         <svg
+//           version="1.1"
+//           fill="#ED3641"
+//           xmlns="http://www.w3.org/2000/svg"
+//           viewBox="44.52 218.89 703.36 179.35"
+//           xmlSpace="preserve"
+//           width="190px"
+//           className="mx-auto"
+//         >
+//           <g>
+//             <path
+//               className="logo"
+//               d="M207.33 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.13 0 48.7 15.84 48.7 47.31.01 31.48-22.56 47.32-48.7 47.32m19.8-47.32c0-17.22-9.1-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M313.67 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.13 0 48.7 15.84 48.7 47.31 0 31.48-22.57 47.32-48.7 47.32m19.79-47.32c0-17.22-9.11-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M492.87 359.85c-26.13 0-48.7-15.84-48.7-47.32s22.57-47.31 48.7-47.31c26.14 0 48.71 15.84 48.71 47.31-.01 31.48-22.58 47.32-48.71 47.32m19.79-47.32c0-17.22-9.1-24.35-19.8-24.35-10.69 0-19.8 7.12-19.8 24.35 0 17.22 9.11 24.35 19.8 24.35 10.7.01 19.8-7.13 19.8-24.35M610.68 357.47v-52.66c0-7.92-1.38-15.84-12.07-15.84-10.69 0-15.04 7.92-15.04 20.98v47.52h-28.51v-89.88h26.53l1.98 11.88c6.73-10.69 16.04-14.25 25.94-14.25 17.81 0 29.7 11.48 29.7 31.28v60.98h-28.53zM44.52 218.89v138.58h30.5V218.89z"
+//             />
+//             <path
+//               className="logo"
+//               d="M108.76 288.18l53.65-69.29h-32.07l-55.32 69.29 54.13 69.3h34.64zM721.36 267.59l-1.98 12.27c-4.36-9.9-13.66-14.65-25.34-14.65-21.78 0-41.97 16.43-41.97 46.72 0 28.31 17.62 45.53 39.99 45.53 11.09 0 20.79-4.16 27.32-14.06v12.87c0 14.06-7.53 19.01-18.41 19.01-7.99 0-19.48-2.74-29.05-8.59l-14.89 18.65c1.96 1.49 17.8 12.9 43.14 12.9 31.28 0 47.71-17.42 47.71-44.35v-86.32h-26.52zm-20.98 66.92c-9.31 0-19.4-5.15-19.4-23.16 0-19.4 11.68-23.17 19.79-23.17 9.31 0 19.01 5.15 19.01 23.17 0 19.4-11.29 23.16-19.4 23.16M430.65 293.83l14.27-17.87c-3.61-6.13-10.03-9.96-18.39-9.96-9.7 0-18.22 5.15-22.17 14.26l-1.98-12.67h-26.52v89.88h28.51v-45.73c0-14.65 6.13-21.38 15.04-21.38 4.96 0 9.03 2.06 11.24 3.47"
+//             />
+//           </g>
+//         </svg>
 
-        <figure className="mt-10">
-          <blockquote className="text-center text-xl/8 font-semibold sm:text-2xl/9">
-            <p>
-              “Nice Rhino’s ability to blend deep business understanding with practical, actionable
-              solutions made all the difference. We couldn’t have asked for a better partner in
-              shaping the future of Koorong’s online presence.”
-            </p>
-          </blockquote>
-          <figcaption className="mt-10">
-            <Image
-              src="/images/mugshot-koorong.svg"
-              alt=""
-              width="40"
-              height="40"
-              className="mx-auto rounded-full"
-            />
-            <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-              <div className="font-semibold">David&nbsp;Foster</div>
-              <svg
-                viewBox="0 0 2 2"
-                width="3"
-                height="3"
-                aria-hidden="true"
-                className="fill-current"
-              >
-                <circle cx="1" cy="1" r="1" />
-              </svg>
-              <div className="text-gray-300">Chief&nbsp;Retail&nbsp;Officer at Koorong</div>
-            </div>
-          </figcaption>
-        </figure>
-      </div>
-    </section>
-  );
-}
+//         <figure className="mt-10">
+//           <blockquote className="text-center text-xl/8 font-semibold sm:text-2xl/9">
+//             <p>
+//               “Nice Rhino’s ability to blend deep business understanding with practical, actionable
+//               solutions made all the difference. We couldn’t have asked for a better partner in
+//               shaping the future of Koorong’s online presence.”
+//             </p>
+//           </blockquote>
+//           <figcaption className="mt-10">
+//             <Image
+//               src="/images/mugshot-koorong.svg"
+//               alt=""
+//               width="40"
+//               height="40"
+//               className="mx-auto rounded-full"
+//             />
+//             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
+//               <div className="font-semibold">David&nbsp;Foster</div>
+//               <svg
+//                 viewBox="0 0 2 2"
+//                 width="3"
+//                 height="3"
+//                 aria-hidden="true"
+//                 className="fill-current"
+//               >
+//                 <circle cx="1" cy="1" r="1" />
+//               </svg>
+//               <div className="text-gray-300">Chief&nbsp;Retail&nbsp;Officer at Koorong</div>
+//             </div>
+//           </figcaption>
+//         </figure>
+//       </div>
+//     </section>
+//   );
+// }
 
 function ProblemSolving() {
   return (

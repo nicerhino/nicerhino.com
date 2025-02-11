@@ -499,8 +499,8 @@ export default function Home() {
     <main>
       {Header()}
       {Hero()}
-      {Testimonial()}
-      {Divider()}
+      {/* {Testimonial()}
+      {Divider()} */}
       {ProblemSolving()}
       {Divider()}
       {Growth()}

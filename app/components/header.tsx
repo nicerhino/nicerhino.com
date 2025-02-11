@@ -10,6 +10,7 @@ import { useState } from "react";
 const navigation = [
   { name: "Problem Solving", href: "#problem-solving" },
   { name: "Growth", href: "#growth" },
+  { name: "Tech", href: "#tech" },
   { name: "About Us", href: "#about-us" },
   { name: "Connect With Us", href: "#connect-with-us" },
 ];
@@ -24,7 +25,7 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex flex-1">
-          <div className="hidden lg:flex lg:gap-x-12">
+          <div className="hidden lg:flex lg:gap-x-10">
             {navigation.map((item) => (
               <Link key={item.name} href={item.href} className="text-sm/6 text-slate-200">
                 {item.name}

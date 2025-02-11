@@ -11,6 +11,12 @@ import {
   RocketLaunchIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import {
+  ClipboardDocumentCheckIcon,
+  CodeBracketSquareIcon,
+  HeartIcon,
+  PencilSquareIcon,
+} from "@heroicons/react/20/solid";
 
 const people = [
   {
@@ -24,6 +30,33 @@ const people = [
     role: "Principal Consultant",
     imageUrl: "/images/mugshot-pete.svg",
     bio: "A software engineer by trade, Pete has spent his career in tech leadership, helping form strategy and implementation for some of the world's largest institutions, including Crossrail, HSBC and Lloyd's Bank.\n\nPete has a business degree and two startups under his belt.",
+  },
+];
+
+const features = [
+  {
+    name: "Build technical competency.",
+    description:
+      "Helping you design and build a competent technical team that is well organised and mission focussed.",
+    icon: CodeBracketSquareIcon,
+  },
+  {
+    name: "Uplift existing capacity.",
+    description:
+      "Assessing your existing technical capacity, identifying gaps, and improving delivery.",
+    icon: HeartIcon,
+  },
+  {
+    name: "Prototyping.",
+    description:
+      "Building sophisticated designs and prototypes for your products and internal solutions, paving the way for your team.",
+    icon: PencilSquareIcon,
+  },
+  {
+    name: "Project delivery.",
+    description:
+      "Helping you with technology selection, implementation design, system commissioning, and project management.",
+    icon: ClipboardDocumentCheckIcon,
   },
 ];
 
@@ -300,6 +333,50 @@ function Growth() {
   );
 }
 
+function Tech() {
+  return (
+    <section id="tech" className="overflow-hidden py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="lg:pt-4 lg:pr-8">
+            <div className="lg:max-w-lg">
+              <p className="text-base/7 font-semibold text-indigo-600">Tech</p>
+              <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl">
+                Don&apos;t play catch up. <span className="text-radical">Overtake.</span>
+              </h1>
+              <p className="mt-6 text-lg/8 text-gray-300">
+                Technology is a powerful lever to use in an increasingly competitive environment. We
+                can help you leverage it without risking the farm.
+              </p>
+              <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
+                {features.map((feature) => (
+                  <div key={feature.name} className="relative pl-9">
+                    <dt className="inline font-semibold text-white">
+                      <feature.icon
+                        aria-hidden="true"
+                        className="absolute top-1 left-1 size-5 text-indigo-500"
+                      />
+                      {feature.name}
+                    </dt>{" "}
+                    <dd className="inline">{feature.description}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+          <Image
+            alt="Worker using a computer tablet"
+            src="/images/stock/worker-in-factory.jpg"
+            className="w-[30rem] max-w-none rounded-xl ring-1 shadow-xl ring-white/10 lg:mt-20 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+            width="5120"
+            height="2880"
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function AboutUs() {
   return (
     <section id="about-us" className="overflow-hidden py-24 sm:py-32">
@@ -427,6 +504,8 @@ export default function Home() {
       {ProblemSolving()}
       {Divider()}
       {Growth()}
+      {Divider()}
+      {Tech()}
       {Divider()}
       {AboutUs()}
       {Divider()}

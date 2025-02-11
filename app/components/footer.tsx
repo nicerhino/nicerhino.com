@@ -6,6 +6,7 @@ const navigation = {
   main: [
     { name: "Problem Solving", href: "#problem-solving" },
     { name: "Growth", href: "#growth" },
+    { name: "Tech", href: "#tech" },
     { name: "About Us", href: "#about-us" },
     { name: "Connect With Us", href: "#connect-with-us" },
   ],

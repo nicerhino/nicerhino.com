@@ -53,7 +53,7 @@ const features = [
     icon: PencilSquareIcon,
   },
   {
-    name: "Project delivery.",
+    name: "Digital transformation.",
     description:
       "Helping you with technology selection, implementation design, system commissioning, and project management.",
     icon: ClipboardDocumentCheckIcon,

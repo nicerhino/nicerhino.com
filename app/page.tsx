@@ -192,7 +192,7 @@ function ProblemSolving() {
           <div className="lg:pr-8">
             <h2 className="text-2xl font-semibold tracking-tight text-pretty">What we do</h2>
             <p className="mt-6 text-base/7 text-gray-400">
-              Our work varies from evaluating options for a critical stategic decision, to reigning
+              Our work varies from evaluating options for a critical strategic decision, to reigning
               in runaway projects, solutioning complex problems, and assisting with implementation.
             </p>
             <p className="mt-6 text-base/7 text-gray-400">

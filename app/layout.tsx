@@ -5,7 +5,7 @@ import "@fontsource/poppins/700.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
-  title: "Nice Rhino - a champion by your side",
+  title: "Nice Rhino - Consulting that delivers",
   description:
     "An Australian consultancy that provides advice, ideas and support when you need them most.",
 };
@@ -17,10 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className="bg-slate-950 text-slate-200 scroll-smooth antialiased"
-      >
+      <body className="bg-slate-950 text-slate-200 scroll-smooth antialiased">
         {children}
         <Analytics />
       </body>

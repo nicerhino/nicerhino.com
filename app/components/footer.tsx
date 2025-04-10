@@ -1,20 +1,21 @@
 "use client";
 
+import Image from "next/image";
 import nicerhino from "../../nicerhino.json";
 
 const navigation = {
-  main: [
-    { name: "Problem Solving", href: "#problem-solving" },
-    { name: "Growth", href: "#growth" },
-    { name: "Tech", href: "#tech" },
-    { name: "About Us", href: "#about-us" },
-    { name: "Connect With Us", href: "#connect-with-us" },
+  solutions: [
+    { name: "Advisory", href: "/advisory" },
+    { name: "Turnaround", href: "/turnaround" },
+    { name: "Deep Tech", href: "/deep-tech" },
   ],
+  connect: [{ name: "Connect", href: "/connect" }],
+  company: [{ name: "Company", href: "/company" }],
   social: [
     {
       name: "GitHub",
       href: "https://github.com/nicerhino",
-      icon: (props: Record<string, string>) => (
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -26,8 +27,8 @@ const navigation = {
     },
     {
       name: "LinkedIn",
-      href: "https://www.linkedin.com/company/nicerhino",
-      icon: (props: Record<string, string>) => (
+      href: "https://linkedin.com/company/nicerhino",
+      icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -45,28 +46,70 @@ export default function Footer() {
 
   return (
     <footer>
-      <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-        <nav
-          aria-label="Footer"
-          className="-mb-6 flex flex-wrap justify-center gap-x-12 gap-y-3 text-sm/6"
-        >
-          {navigation.main.map((item) => (
-            <a key={item.name} href={item.href} className="text-slate-200">
-              {item.name}
-            </a>
-          ))}
-        </nav>
-        <div className="mt-16 flex justify-center gap-x-10">
-          {navigation.social.map((item) => (
-            <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
-              <span className="sr-only">{item.name}</span>
-              <item.icon aria-hidden="true" className="size-6" />
-            </a>
-          ))}
+      <div className="mt-32 mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32 border-t border-white/10">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8">
+            <Image alt="Nice Rhino" src="/images/icon.png" className="h-9" width={47} height={32} />
+            <p className="text-sm/6 text-balance text-gray-300">
+              Your most reliable ally. With you through every challenge. Guiding you to prosperity.
+            </p>
+            <div className="flex gap-x-6">
+              {navigation.social.map((item) => (
+                <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon aria-hidden="true" className="size-6" />
+                </a>
+              ))}
+            </div>
+          </div>
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm/6 font-semibold text-white">Solutions</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.solutions.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm/6 font-semibold text-white">Connect</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.connect.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 className="text-sm/6 font-semibold text-white">Company</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                        {item.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <p className="mt-10 text-center text-xs text-gray-400">
-          &copy; {currentYear} Nice Rhino Pty Ltd • ABN: {nicerhino.abn} • ACN: {nicerhino.acn}
-        </p>
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-sm/6 text-gray-400">
+            &copy; {currentYear} Nice Rhino Pty Ltd • ABN: {nicerhino.abn} • ACN: {nicerhino.acn}
+          </p>
+        </div>
       </div>
     </footer>
   );

@@ -15,7 +15,7 @@ const navigation = {
     {
       name: "GitHub",
       href: "https://github.com/nicerhino",
-      icon: (props: any) => (
+      icon: (props: Record<string, string>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -28,7 +28,7 @@ const navigation = {
     {
       name: "LinkedIn",
       href: "https://linkedin.com/company/nicerhino",
-      icon: (props: any) => (
+      icon: (props: Record<string, string>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"

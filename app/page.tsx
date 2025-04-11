@@ -48,7 +48,7 @@ function Hero() {
               delivers<span className="animate-pulse">.</span>
             </span>
           </h1>
-          <div className="mt-10 mx-auto max-w-2xl text-lg sm:text-2xl font-bold tracking-tight text-slate-400">
+          <div className="mt-10 mx-auto max-w-2xl text-lg sm:text-2xl font-semibold tracking-tight text-slate-300">
             Your most{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-br from-(--color-barbie) to-(--color-barbie1)">
               reliable ally.{" "}
@@ -57,12 +57,12 @@ function Hero() {
           </div>
           <div className="mt-20 flex items-center justify-center gap-x-6">
             <Link
-              href="#connect-with-us"
+              href="/connect"
               className="rounded-md bg-gradient-to-r from-(--color-barbie) to-(--color-barbie1) hover:from-(--color-barbie1) hover:text-white px-3.5 py-2.5 text-sm font-semibold text-white"
             >
               Connect with us
             </Link>
-            <Link href="#problem-solving" className="text-sm/6 font-semibold">
+            <Link href="#what-we-do" className="text-sm/6 font-semibold">
               Learn more <span aria-hidden="true">→</span>
             </Link>
           </div>
@@ -153,17 +153,20 @@ function WhoWeAre() {
             </p>
 
             <div className="mt-10 max-w-xl text-base/7 text-slate-400 lg:max-w-none">
-              <p className="mt-8">
-                Et vitae blandit facilisi magna lacus commodo. Vitae sapien duis odio id et. Id
-                blandit molestie auctor fermentum dignissim. Lacus diam tincidunt ac cursus in vel.
-                Mauris varius vulputate et ultrices hac adipiscing egestas. Iaculis convallis ac
-                tempor et ut. Ac lorem vel integer orci.
+              <p>
+                Our consultants are subject matter experts in a variety of fields and can be
+                deployed at a moment&apos;s notice, anywhere in the world. We are passionate global
+                citizens and are excited to support your mission, irrespective of nationality,
+                gender, race, religion, or sexual identity.
               </p>
 
-              <h3 className="mt-16 text-2xl font-bold tracking-tight text-slate-200">Mission</h3>
+              <h3 className="mt-10 text-2xl font-bold tracking-tight text-slate-200">Mission</h3>
               <p className="mt-4">
-                Our mission is simply to <em>help</em>. Whether we are winching you out of quicksand
-                or strapping a rocket to your growth, we will be your most reliable ally.
+                <strong>
+                  Our mission is simply to <em>help</em>.
+                </strong>{" "}
+                Whether in an advisory or a delivery capacity, we are your most reliable ally and
+                strongest defender.
               </p>
             </div>
           </div>
@@ -188,7 +191,7 @@ function Cta() {
       </p>
       <div className="mt-8 flex justify-center">
         <a
-          href="#"
+          href="/connect"
           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
           Connect with us

@@ -10,7 +10,7 @@ const navigation = {
     { name: "Deep Tech", href: "/deep-tech" },
   ],
   connect: [{ name: "Connect", href: "/connect" }],
-  company: [{ name: "Company", href: "/company" }],
+  company: [{ name: "Company", href: "/" }],
   social: [
     {
       name: "GitHub",
@@ -49,13 +49,19 @@ export default function Footer() {
       <div className="mt-32 mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32 border-t border-white/10">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Image alt="Nice Rhino" src="/images/icon.png" className="h-9" width={47} height={32} />
-            <p className="text-sm/6 text-balance text-gray-300">
+            <Image
+              alt="Nice Rhino"
+              src="/images/icon.png"
+              className="h-9 w-auto"
+              width={47}
+              height={32}
+            />
+            <p className="text-sm/6 text-balance text-slate-300">
               Your most reliable ally. With you through every challenge. Guiding you to prosperity.
             </p>
             <div className="flex gap-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-300">
+                <a key={item.name} href={item.href} className="text-slate-400 hover:text-slate-200">
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
                 </a>
@@ -69,7 +75,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      <a href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
                       </a>
                     </li>
@@ -81,7 +87,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.connect.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      <a href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
                       </a>
                     </li>
@@ -95,7 +101,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-gray-400 hover:text-white">
+                      <a href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
                       </a>
                     </li>
@@ -106,7 +112,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
-          <p className="text-sm/6 text-gray-400">
+          <p className="text-sm/6 text-slate-400">
             &copy; {currentYear} Nice Rhino Pty Ltd • ABN: {nicerhino.abn} • ACN: {nicerhino.acn}
           </p>
         </div>

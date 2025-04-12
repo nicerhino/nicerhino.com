@@ -3,9 +3,23 @@
 import Image from "next/image";
 import Footer from "../components/footer";
 import Header from "../components/header";
-import { BuildingOffice2Icon, EnvelopeIcon, PhoneIcon } from "@heroicons/react/24/outline";
+import {
+  BuildingOffice2Icon,
+  CheckIcon,
+  EnvelopeIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
+import countries from "../../countries.json";
 import timezones from "../../timezones.json";
+import Link from "next/link";
+import { ConnectResult, requestCall, sendMessage } from "./actions";
+import { useActionState } from "react";
+
+const initialState: ConnectResult = {
+  success: false,
+  message: "",
+};
 
 function Hero() {
   return (
@@ -27,19 +41,19 @@ function Hero() {
                 <span className="text-barbie">Connect</span> with us.
               </h1>
               <p className="mt-8 text-lg font-medium text-pretty text-slate-400 sm:text-xl/8">
-                Looking for guidance on a specific project, a thorny issue, or an ambitious ideas?
+                Looking for guidance on a specific project, a thorny issue, or an ambitious idea?
                 We&apos;re here to help with honest feedback and subject matter expertise.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <a
+                <Link
                   href="tel:+61272574433"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Call now
-                </a>
-                <a href="#message" className="text-sm/6 font-semibold">
+                </Link>
+                <Link href="#message" className="text-sm/6 font-semibold">
                   Send a message <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -58,65 +72,9 @@ function Hero() {
   );
 }
 
-function Callback() {
-  return (
-    <section id="callback">
-      <div className="px-6 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
-            Request a callback.
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-indigo-200">
-            If you&apos;re in a different timezone, we&apos;ll call you back during your local
-            business hours.
-          </p>
-          <form action="#" method="POST" className="pt-10" onSubmitCapture={() => {}}>
-            <div className="flex justify-center">
-              <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
-                <div className="grid shrink-0 grid-cols-1 focus-within:relative">
-                  <select
-                    id="timezone"
-                    name="timezone"
-                    aria-label="Timezone"
-                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                    defaultValue="UTC"
-                  >
-                    {timezones.map((tz) => (
-                      <option key={tz} value={tz}>
-                        {tz}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDownIcon
-                    aria-hidden="true"
-                    className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
-                  />
-                </div>
-                <input
-                  id="phone-number"
-                  name="phone-number"
-                  type="text"
-                  placeholder="+61 400 123 456"
-                  className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
-                />
-              </div>
-              <div className="ml-1">
-                <button
-                  type="submit"
-                  className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
-                >
-                  Call me
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Connect() {
+  const [state, formAction, pending] = useActionState(sendMessage, initialState);
+
   return (
     <section id="message" className="relative isolate">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
@@ -140,8 +98,7 @@ function Connect() {
               Location
             </h2>
             <p className="mt-6 text-lg/8 text-gray-300">
-              Nice Rhino is based in Orange, Australia, however our work takes us all over the
-              globe.
+              Nice Rhino is based in Orange, Australia. Our work takes us all over the globe.
             </p>
             <dl className="mt-10 space-y-4 text-base/7 text-gray-300">
               <div className="flex gap-x-4">
@@ -176,12 +133,7 @@ function Connect() {
             </dl>
           </div>
         </div>
-        <form
-          action="#"
-          method="POST"
-          className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48"
-          onSubmitCapture={() => {}}
-        >
+        <form action={formAction} className="px-6 pt-20 pb-24 sm:pb-32 lg:px-8 lg:py-48">
           <div className="mx-auto max-w-xl lg:mr-0 lg:max-w-lg">
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -194,6 +146,8 @@ function Connect() {
                     name="name"
                     type="text"
                     autoComplete="name"
+                    required
+                    minLength={2}
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                   />
                 </div>
@@ -208,6 +162,8 @@ function Connect() {
                     name="organisation"
                     type="text"
                     autoComplete="organization"
+                    required
+                    minLength={1}
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                   />
                 </div>
@@ -222,6 +178,8 @@ function Connect() {
                     name="email"
                     type="email"
                     autoComplete="email"
+                    required
+                    minLength={5}
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                   />
                 </div>
@@ -235,22 +193,126 @@ function Connect() {
                     id="message"
                     name="message"
                     rows={4}
+                    required
+                    minLength={10}
                     className="block w-full rounded-md bg-white/5 px-3.5 py-2 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500"
                     defaultValue={""}
                   />
                 </div>
               </div>
             </div>
-            <div className="mt-8 flex justify-end">
-              <button
-                type="submit"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
-              >
-                Send message
-              </button>
+            <div className="grid grid-cols-2 mt-8">
+              <div className="text-red-600 font-bold">{!state.success && state.message}</div>
+              <div className="flex justify-end text-green-600">
+                {state.success ? (
+                  <>
+                    <CheckIcon aria-hidden="true" className="size-6" />
+                    <span className="pl-2">Sent</span>
+                  </>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={pending}
+                    className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
+                  >
+                    Send message
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         </form>
+      </div>
+    </section>
+  );
+}
+
+function Callback() {
+  const [state, formAction, pending] = useActionState(requestCall, initialState);
+
+  return (
+    <section id="callback">
+      <div className="px-6 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-4xl font-semibold tracking-tight text-balance text-white sm:text-5xl">
+            Request a call.
+          </h2>
+          <p className="mx-auto mt-6 max-w-xl text-lg/8 text-pretty text-indigo-200">
+            If you&apos;re in a different timezone, we&apos;ll call you back during your local
+            business hours.
+          </p>
+          <form action={formAction} className="pt-10">
+            <div className="flex justify-center">
+              <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+                <div className="grid shrink-0 grid-cols-1 focus-within:relative">
+                  <select
+                    id="timezone"
+                    name="timezone"
+                    aria-label="Timezone"
+                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                    defaultValue="UTC"
+                  >
+                    {timezones.map((tz) => (
+                      <option key={tz} value={tz}>
+                        {tz}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDownIcon
+                    aria-hidden="true"
+                    className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                  />
+                </div>
+                <div className="grid shrink-0 grid-cols-1 focus-within:relative">
+                  <select
+                    id="country"
+                    name="country"
+                    aria-label="Country Code"
+                    className="col-start-1 row-start-1 w-full appearance-none rounded-md py-2 pr-7 pl-3.5 text-base text-gray-500 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
+                  >
+                    {countries.map((cn) => (
+                      <option key={cn.code} value={cn.dial_code}>
+                        {cn.emoji} {cn.code}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDownIcon
+                    aria-hidden="true"
+                    className="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-500 sm:size-4"
+                  />
+                </div>
+                <input
+                  id="phone-number"
+                  name="phone"
+                  type="tel"
+                  placeholder="0400 123 456"
+                  required
+                  minLength={6}
+                  pattern="[0-9\s-]+"
+                  className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
+                />
+              </div>
+              <div className="ml-1 text-green-600 w-24 text-left">
+                {state.success ? (
+                  <>
+                    <CheckIcon aria-hidden="true" className="size-10 pl-2" />
+                  </>
+                ) : (
+                  <button
+                    type="submit"
+                    disabled={pending}
+                    className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 cursor-pointer"
+                  >
+                    Call me
+                  </button>
+                )}
+              </div>
+            </div>
+            <div className="mt-5 text-red-600 text-center font-bold">
+              {!state.success && state.message}
+            </div>
+          </form>
+        </div>
       </div>
     </section>
   );

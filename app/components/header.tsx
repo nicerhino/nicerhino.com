@@ -41,7 +41,7 @@ const services = [
   },
 ];
 const callsToAction = [
-  { name: "Request callback", href: "/connect#callback", icon: PhoneArrowDownLeftIcon },
+  { name: "Request a call", href: "/connect#callback", icon: PhoneArrowDownLeftIcon },
   { name: "Call now", href: "tel:+61272574433", icon: PhoneIcon },
 ];
 

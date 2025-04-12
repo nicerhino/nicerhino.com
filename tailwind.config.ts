@@ -6,6 +6,13 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      scrollBehavior: {
+        smooth: "smooth",
+        auto: "auto",
+      },
+    },
+  },
   plugins: [],
 } satisfies Config;

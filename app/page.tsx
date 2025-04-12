@@ -14,7 +14,7 @@ const features = [
   {
     name: "Advisory",
     description:
-      "Time is short and organisations cannot afford to tread water whilst they attempt to navigate ever more complex environments. Our consultants cut through the fog, delivering much needed clarity and forward momentum.",
+      "Time is short. Organisations cannot afford to tread water whilst they attempt to navigate ever more complex environments. Our consultants cut through the fog, delivering much needed clarity and forward momentum.",
     icon: ChatBubbleLeftRightIcon,
     href: "advisory",
   },
@@ -163,9 +163,9 @@ function WhoWeAre() {
               <h3 className="mt-10 text-2xl font-bold tracking-tight text-slate-200">Mission</h3>
               <p className="mt-4">
                 <strong>
-                  Our mission is simply to <em>help</em>.
+                  Our mission is to be your <strong>ally</strong>.
                 </strong>{" "}
-                Whether in an advisory or a delivery capacity, we are your most reliable ally and
+                Whether in an advisory or a delivery capacity, we are your most reliable partner and
                 strongest defender.
               </p>
             </div>
@@ -176,12 +176,12 @@ function WhoWeAre() {
   );
 }
 
-function Cta() {
+export function Cta() {
   return (
     <section id="cta" className="mx-auto max-w-2xl text-center">
       <h2 className="text-base/7 font-semibold text-indigo-600">Connect with us</h2>
       <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
-        Realise the change your organisation needs.
+        Drive the change your organisation needs.
         <br />
         <span className="text-barbie">Let&apos;s talk.</span>
       </p>

@@ -92,9 +92,9 @@ function WhatWeDo() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base/7 font-semibold text-indigo-600">What we do</h2>
           <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
-            We don&apos;t deliver reports.
-            <br />
             <span className="text-barbie">We deliver change.</span>
+            <br />
+            Not reports.
           </p>
           <p className="mt-6 text-lg/8 text-slate-400">
             Nice Rhino provides strategic, financial, operational, and technical services to

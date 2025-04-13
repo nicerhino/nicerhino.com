@@ -8,7 +8,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 const stats = [
   { id: 1, name: "Global bankruptcy annual growth rate", value: "12.5% AGR" },
   { id: 2, name: "Countries reporting increase in bankruptcies", value: "Over 50%" },
-  { id: 3, name: "Bankruptcies in France for 2023", value: "57,731" },
+  { id: 3, name: "Bankruptcies in France alone", value: "57,731" },
 ];
 
 const features = [
@@ -153,7 +153,7 @@ function Summary() {
           href="/connect"
           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
         >
-          Take action
+          Start now
         </a>
       </div>
     </section>

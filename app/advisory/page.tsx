@@ -3,39 +3,45 @@
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Link from "next/link";
-import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import {
-  ChatBubbleOvalLeftEllipsisIcon,
-  HeartIcon,
-  PencilSquareIcon,
-  TrashIcon,
+  ChevronDownIcon,
+  ArrowTrendingUpIcon,
+  CodeBracketSquareIcon,
+  RocketLaunchIcon,
+  ClipboardDocumentListIcon,
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import Cta from "../components/cta";
 
 const features = [
   {
-    name: "Spam report",
+    name: "Strategic",
     description:
-      "Autem reprehenderit aut debitis ut. Officiis harum omnis placeat blanditiis delectus sint vel et voluptatum.",
-    icon: TrashIcon,
+      "Understand your micro and macro environments, set ambitious vision, and create competitive advantage.",
+    icon: RocketLaunchIcon,
   },
   {
-    name: "Compose in markdown",
-    description:
-      "Illum et aut inventore. Ut et dignissimos quasi. Omnis saepe dolorum. Hic autem fugiat. Voluptatem officiis necessitatibus.",
-    icon: PencilSquareIcon,
+    name: "Operational",
+    description: "Realise efficiencies through process improvement, restructuring, and automation.",
+    icon: ClipboardDocumentListIcon,
   },
   {
-    name: "Email commenting",
+    name: "Technical",
     description:
-      "Commodi quam quo. In quasi mollitia optio voluptate et est reiciendis. Ut et sunt id officiis vitae perspiciatis.",
-    icon: ChatBubbleOvalLeftEllipsisIcon,
+      "Uplift engineering capabilities, increase velocity, and improve collaboration with other teams.",
+    icon: CodeBracketSquareIcon,
   },
   {
-    name: "Customer connections",
+    name: "Financial",
     description:
-      "Deserunt corrupti praesentium quo vel cupiditate est occaecati ad. Aperiam libero modi similique iure praesentium facilis.",
-    icon: HeartIcon,
+      "Gain greater insight into your financial performance and make data-driven decisions.",
+    icon: ArrowTrendingUpIcon,
+  },
+  {
+    name: "Fractional Leadership",
+    description:
+      "Benefit from an experienced CFO, COO, or CTO on your management team, without the expense of a full-time commitment.",
+    icon: UserGroupIcon,
   },
 ];
 

@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: "https://nicerhino.com/connect",
       lastModified: new Date(),
       changeFrequency: "yearly",
-      priority: 0.9,
+      priority: 0.5,
     },
     {
       url: "https://nicerhino.com/advisory",

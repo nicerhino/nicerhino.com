@@ -4,47 +4,33 @@ import Footer from "../components/footer";
 import Header from "../components/header";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
-import {
-  ArrowPathIcon,
-  CloudArrowUpIcon,
-  FingerPrintIcon,
-  LockClosedIcon,
-} from "@heroicons/react/24/outline";
 
 const stats = [
   { id: 1, name: "Global bankruptcy annual growth rate", value: "12.5% AGR" },
-  { id: 2, name: "Countries reporting increase in bankruptcies", value: ">50%" },
+  { id: 2, name: "Countries reporting increase in bankruptcies", value: "Over 50%" },
   { id: 3, name: "Bankruptcies in France for 2023", value: "57,731" },
 ];
 
 const features = [
   {
-    order: 1,
-    name: "Push to deploy",
+    name: "1. Stop the bleeding",
     description:
-      "Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.",
-    icon: CloudArrowUpIcon,
+      "Our team urgently consolidates your cash position, campaigns for debt relief, and takes inventory of remaining resources.",
   },
   {
-    order: 3,
-    name: "SSL certificates",
+    name: "2. Turnaround strategy",
     description:
-      "Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.",
-    icon: LockClosedIcon,
+      "We evaluate your finances, operations, pipeline, staff, and customers to develop a comprehensive turnaround strategy.",
   },
   {
-    order: 2,
-    name: "Simple queues",
+    name: "3. Take action",
     description:
-      "Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.",
-    icon: ArrowPathIcon,
+      "Together we implement the turnaround strategy, measure its effectiveness, and adjust as needed.",
   },
   {
-    order: 4,
-    name: "Advanced security",
+    name: "4. Growth",
     description:
-      "Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.",
-    icon: FingerPrintIcon,
+      "Once stabilised, we'll redirect attention to growth opportunities, leaving your business in a strong position with your future assured.",
   },
 ];
 
@@ -81,7 +67,7 @@ function Stats() {
     <section id="stats" className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <h2 className="col-span-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl text-center">
-          Sobering statistics.
+          Sobering statistics...
         </h2>
         <dl className="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3 mt-20">
           {stats.map((stat) => (
@@ -101,33 +87,66 @@ function Stats() {
   );
 }
 
+// function Summary() {
+//   return (
+//     <section className="mx-auto max-w-7xl px-6 lg:px-8">
+//       <div className="mx-auto max-w-2xl lg:text-center">
+//         <h2 className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
+//           But we have a plan.
+//         </h2>
+//         <p className="mt-6 text-lg/8 text-slate-400">
+//           Just because your business is struggling doesn&apos;t mean it&apos;s doomed. With our
+//           expertise and support, <strong>you can succeed.</strong>
+//         </p>
+//       </div>
+//       <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+//         <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+//           {features.map((feature) => (
+//             <div key={feature.name} className="relative pl-16">
+//               <dt className="text-base/7 font-semibold text-slate-200">
+//                 <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+//                   <feature.icon aria-hidden="true" className="size-6 text-white" />
+//                 </div>
+//                 {feature.name}
+//               </dt>
+//               <dd className="mt-2 text-base/7 text-slate-500">{feature.description}</dd>
+//             </div>
+//           ))}
+//         </dl>
+//       </div>
+
+//       <div className="mt-20 flex justify-center">
+//         <a
+//           href="/connect"
+//           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+//         >
+//           Take action
+//         </a>
+//       </div>
+//     </section>
+//   );
+// }
+
 function Summary() {
   return (
-    <section className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="summary" className="mx-auto max-w-7xl px-6 lg:px-8">
       <div className="mx-auto max-w-2xl lg:text-center">
         <h2 className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
-          But we have a plan.
+          But we <span className="text-barbie">have a plan.</span>
         </h2>
         <p className="mt-6 text-lg/8 text-slate-400">
-          Quis tellus eget adipiscing convallis sit sit eget aliquet quis. Suspendisse eget egestas
-          a elementum pulvinar et feugiat blandit at. In mi viverra elit nunc.
+          Just because your business is struggling doesn&apos;t mean it&apos;s over. With our
+          expertise and support, <strong>you can succeed.</strong>
         </p>
       </div>
-      <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-        <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-          {features.map((feature) => (
-            <div key={feature.name} className="relative pl-16">
-              <dt className="text-base/7 font-semibold text-slate-200">
-                <div className="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
-                  {feature.order}
-                </div>
-                {feature.name}
-              </dt>
-              <dd className="mt-2 text-base/7 text-slate-500">{feature.description}</dd>
-            </div>
-          ))}
-        </dl>
-      </div>
+      <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+        {features.map((feature) => (
+          <div key={feature.name}>
+            <dt className="font-semibold">{feature.name}</dt>
+            <dd className="mt-1 text-slate-400">{feature.description}</dd>
+          </div>
+        ))}
+      </dl>
 
       <div className="mt-20 flex justify-center">
         <a

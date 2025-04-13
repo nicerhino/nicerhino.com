@@ -1,6 +1,14 @@
 "use server";
 
+import { createTransport } from "nodemailer";
+import { env } from "process";
 import { z } from "zod";
+
+const EMAIL_TO = "hello@nicerhino.com";
+const SMTP_HOST = "smtp.mail.us-east-1.awsapps.com";
+const SMTP_PORT = 465;
+const SMTP_USER = env.SMTP_USER!;
+const SMTP_PASSWORD = env.SMTP_PASSWORD!;
 
 export interface ConnectResult {
   success: boolean;
@@ -47,6 +55,25 @@ export async function sendMessage(
     };
   }
 
+  const body = `
+    Name: ${validatedFields.data.name}
+    Organisation: ${validatedFields.data.organisation}
+    Email: ${validatedFields.data.email}
+    Message:
+    ${validatedFields.data.message}
+  `;
+
+  try {
+    await send("Message from website", body);
+  } catch (err) {
+    console.error(err);
+
+    return {
+      success: false,
+      message: "Server error",
+    };
+  }
+
   return {
     success: true,
     message: "",
@@ -75,7 +102,24 @@ export async function requestCall(
   if (!validatedFields.success) {
     return {
       success: false,
-      message: JSON.stringify(validatedFields.error.errors), //"Invalid form data",
+      message: "Invalid form data",
+    };
+  }
+
+  const body = `
+    Timezone: ${validatedFields.data.timezone}
+    Country: ${validatedFields.data.country}
+    Phone: ${validatedFields.data.phone}
+  `;
+
+  try {
+    await send("Call request from website", body);
+  } catch (err) {
+    console.error(err);
+
+    return {
+      success: false,
+      message: "Server error",
     };
   }
 
@@ -83,4 +127,25 @@ export async function requestCall(
     success: true,
     message: "",
   };
+}
+
+async function send(subject: string, body: string) {
+  const transporter = createTransport({
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    secure: true,
+    auth: {
+      user: SMTP_USER,
+      pass: SMTP_PASSWORD,
+    },
+  });
+
+  const info = await transporter.sendMail({
+    from: '"Nice Rhino Website" <web@nicerhino.com>',
+    to: EMAIL_TO,
+    subject,
+    text: body,
+  });
+
+  console.log("Message sent: %s", info.messageId);
 }

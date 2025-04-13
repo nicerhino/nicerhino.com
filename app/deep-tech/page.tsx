@@ -95,8 +95,8 @@ function Summary() {
             src="/images/stock/elephant-bw.png"
             alt="Wise elephant"
             className="w-sm ml-10 object-cover"
-            width={2076}
-            height={2516}
+            width={1000}
+            height={1212}
           />
         </div>
 

@@ -129,51 +129,51 @@ function WhatWeDo() {
 
 function WhoWeAre() {
   return (
-    <section id="who-we-are" className="relative">
-      <div className="mx-auto max-w-7xl lg:flex lg:justify-between lg:px-8 xl:justify-end">
-        <div className="lg:flex lg:w-1/2 lg:shrink lg:grow-0 xl:absolute xl:inset-y-0 xl:right-1/2 xl:w-1/2">
-          <div className="relative h-80 lg:-ml-8 lg:h-auto lg:w-full lg:grow xl:ml-0">
+    <div className="overflow-hidden py-24 sm:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div className="lg:ml-auto lg:pt-4 lg:pl-4">
+            <div className="lg:max-w-lg">
+              <h2 className="text-base/7 font-semibold text-indigo-600">Who we are</h2>
+              <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
+                An Australian consultancy with <span className="text-barbie">global reach.</span>
+              </p>
+              <p className="mt-6 text-xl/8 text-slate-400">
+                We have experience working across Europe and Australasia in fields such as banking
+                and finance, critical-to-life engineering, geospatial, telecommunications, and
+                retail.
+              </p>
+              <div className="mt-10 max-w-xl text-base/7 text-slate-400 lg:max-w-none">
+                <p>
+                  Our consultants are subject matter experts in a variety of fields and can be
+                  deployed at a moment&apos;s notice, anywhere in the world. We are passionate
+                  global citizens and are excited to support your mission, irrespective of
+                  nationality, gender, race, religion, or sexual identity.
+                </p>
+
+                <h3 className="mt-10 text-2xl font-bold tracking-tight text-slate-200">Mission</h3>
+                <p className="mt-4">
+                  <strong>
+                    Our mission is to be your <strong>ally</strong>.
+                  </strong>{" "}
+                  Whether in an advisory or a delivery capacity, we are your most reliable partner
+                  and strongest defender.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex items-start justify-end lg:order-first">
             <Image
-              alt=""
+              alt="Photo of Earth"
               src="/images/stock/earth.png"
-              className="absolute inset-0 size-fit object-cover"
-              width={8192}
-              height={8192}
+              width={2000}
+              height={2000}
+              className="w-[48rem] max-w-none sm:w-[57rem]"
             />
           </div>
         </div>
-        <div className="px-6 lg:contents">
-          <div className="mx-auto max-w-2xl pb-24 sm:pb-32 lg:mr-0 lg:ml-8 lg:w-full lg:max-w-lg lg:flex-none xl:w-1/2">
-            <h2 className="text-base/7 font-semibold text-indigo-600">Who we are</h2>
-            <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty sm:text-5xl lg:text-balance">
-              An Australian consultancy with <span className="text-barbie">global reach.</span>
-            </p>
-            <p className="mt-6 text-xl/8 text-slate-400">
-              We have experience working across Europe and Australasia in fields such as banking and
-              finance, critical-to-life engineering, geospatial, telecommunications, and retail.
-            </p>
-
-            <div className="mt-10 max-w-xl text-base/7 text-slate-400 lg:max-w-none">
-              <p>
-                Our consultants are subject matter experts in a variety of fields and can be
-                deployed at a moment&apos;s notice, anywhere in the world. We are passionate global
-                citizens and are excited to support your mission, irrespective of nationality,
-                gender, race, religion, or sexual identity.
-              </p>
-
-              <h3 className="mt-10 text-2xl font-bold tracking-tight text-slate-200">Mission</h3>
-              <p className="mt-4">
-                <strong>
-                  Our mission is to be your <strong>ally</strong>.
-                </strong>{" "}
-                Whether in an advisory or a delivery capacity, we are your most reliable partner and
-                strongest defender.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+    </div>
   );
 }
 

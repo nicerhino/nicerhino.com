@@ -15,6 +15,7 @@ import timezones from "../../timezones.json";
 import Link from "next/link";
 import { ConnectResult, requestCall, sendMessage } from "./actions";
 import { useActionState } from "react";
+import { track } from "@vercel/analytics";
 
 const initialState: ConnectResult = {
   success: false,
@@ -48,6 +49,7 @@ function Hero() {
                 <Link
                   href="tel:+61272574433"
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  onClick={() => track("Call now CTA", { location: "Connect Hero" })}
                 >
                   Call now
                 </Link>

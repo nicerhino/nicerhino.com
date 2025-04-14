@@ -10,6 +10,7 @@ import {
   CubeTransparentIcon,
 } from "@heroicons/react/20/solid";
 import Cta from "./components/cta";
+import { track } from "@vercel/analytics";
 
 const features = [
   {
@@ -60,6 +61,7 @@ function Hero() {
             <Link
               href="/connect"
               className="rounded-md bg-gradient-to-r from-(--color-barbie) to-(--color-barbie1) hover:from-(--color-barbie1) hover:text-white px-3.5 py-2.5 text-sm font-semibold text-white"
+              onClick={() => track("Connect CTA", { location: "Home Hero" })}
             >
               Connect with us
             </Link>

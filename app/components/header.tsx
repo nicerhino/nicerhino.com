@@ -19,6 +19,7 @@ import {
   XMarkIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { track } from "@vercel/analytics";
 
 const services = [
   {
@@ -89,10 +90,10 @@ export default function Navigation() {
                       />
                     </div>
                     <div className="flex-auto">
-                      <a href={item.href} className="block text-slate-200">
+                      <Link href={item.href} className="block text-slate-200">
                         {item.name}
                         <span className="absolute inset-0" />
-                      </a>
+                      </Link>
                       <p className="mt-1 text-slate-400">{item.description}</p>
                     </div>
                   </div>
@@ -104,6 +105,7 @@ export default function Navigation() {
                     key={item.name}
                     href={item.href}
                     className="flex items-center justify-center gap-x-2.5 p-3 text-sm/6 hover:bg-slate-700"
+                    onClick={() => track(item.name + " CTA", { location: "Nav" })}
                   >
                     <item.icon aria-hidden="true" className="size-5 flex-none" />
                     {item.name}

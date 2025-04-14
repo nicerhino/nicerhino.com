@@ -1,3 +1,6 @@
+import { track } from "@vercel/analytics";
+import Link from "next/link";
+
 export default function Cta() {
   return (
     <section id="cta" className="mx-auto max-w-2xl text-center">
@@ -12,12 +15,13 @@ export default function Cta() {
         walk away at any time.
       </p>
       <div className="mt-8 flex justify-center">
-        <a
+        <Link
           href="/connect"
           className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
+          onClick={() => track("Connect CTA", { location: "CTA Component" })}
         >
           Connect with us
-        </a>
+        </Link>
       </div>
     </section>
   );

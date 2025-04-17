@@ -94,7 +94,7 @@ function Summary() {
           <Image
             src="/images/stock/elephant-bw.png"
             alt="Wise elephant"
-            className="w-sm ml-10 object-cover"
+            className="w-sm ml-10 object-cover max-lg:hidden"
             width={1000}
             height={1212}
           />
@@ -136,7 +136,7 @@ function CaseStudy() {
   return (
     <div className="pb-24">
       <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div className="relative isolate overflow-hidden bg-gray-900 px-6 py-20 sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24">
+        <div className="relative isolate overflow-hidden sm:bg-gray-900 px-6 py-20 sm:rounded-3xl sm:px-10 sm:py-24 lg:py-24 xl:px-24">
           <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0">
             <div className="lg:row-start-2 lg:max-w-md">
               <h2 className="text-base/7 font-semibold text-indigo-600">Featured Project</h2>

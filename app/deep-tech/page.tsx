@@ -151,14 +151,14 @@ function CaseStudy() {
                 revolutionary platform.
               </p>
             </div>
-            <div className="relative lg:row-span-4 lg:w-[36rem] lg:max-w-none text-center">
+            <div className="relative lg:row-span-4 lg:max-w-none text-center">
               <Link href="https://selium.com" target="_blank">
                 <Image
                   alt="Selium logo"
                   src="/images/selium-logo.png"
                   width={2294}
                   height={620}
-                  className="max-w-md min-w-full px-5 py-10 rounded-xl bg-slate-200"
+                  className="w-fit px-5 py-10 rounded-xl bg-slate-200"
                 />
               </Link>
               <p className="mt-5">

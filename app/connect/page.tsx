@@ -27,7 +27,7 @@ const initialState: ConnectResult = {
 function Hero() {
   return (
     <section id="hero" className="relative">
-      <div className="mx-auto max-w-7xl mb-40">
+      <div className="mx-auto max-w-7xl lg:mb-40">
         <div className="relative z-1 pt-14 lg:w-full lg:max-w-2xl">
           <svg
             viewBox="0 0 100 100"
@@ -63,7 +63,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <Image
           alt="Rhino meets a small bird"
           src="/images/stock/rhino-meet-bird.jpg"
@@ -83,7 +83,7 @@ function Connect() {
     <section id="message" className="relative isolate">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
         <div className="relative px-6 pt-20 pb-20 lg:static lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg overflow-x-clip">
             <div className="absolute inset-y-0 left-0 -z-10 w-full lg:w-1/2">
               <div
                 aria-hidden="true"
@@ -246,8 +246,8 @@ function Callback() {
             business hours.
           </p>
           <form action={formAction} className="pt-10">
-            <div className="flex justify-center">
-              <div className="flex rounded-md mr-1 bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+            <div className="flex flex-wrap justify-center justify-items-start">
+              <div className="flex shrink-0 rounded-md mr-1 bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                 <select
                   id="timezone"
                   name="timezone"
@@ -297,7 +297,7 @@ function Callback() {
                   className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                 />
               </div>
-              <div className="ml-1 text-green-600 w-24 text-left">
+              <div className="ml-1 text-green-600 w-24 text-left text-nowrap">
                 {state.success ? (
                   <>
                     <CheckIcon aria-hidden="true" className="size-10 pl-2" />

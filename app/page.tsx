@@ -11,6 +11,7 @@ import {
 } from "@heroicons/react/20/solid";
 import Cta from "./components/cta";
 import { track } from "@vercel/analytics";
+import LogoCloud from "./components/sections/logocloud";
 
 const features = [
   {
@@ -185,6 +186,7 @@ export default function Home() {
       {Header()}
       {Hero()}
       {WhatWeDo()}
+      {LogoCloud()}
       {WhoWeAre()}
       {Cta()}
       {Footer()}

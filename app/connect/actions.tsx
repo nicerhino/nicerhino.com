@@ -3,8 +3,9 @@
 import { createTransport } from "nodemailer";
 import { env } from "process";
 import { z } from "zod";
+import nr from "../../nicerhino.json";
 
-const EMAIL_TO = "hello@nicerhino.com";
+const EMAIL_TO = nr.email;
 const SMTP_HOST = "smtp.mail.us-east-1.awsapps.com";
 const SMTP_PORT = 465;
 const SMTP_USER = env.SMTP_USER!;

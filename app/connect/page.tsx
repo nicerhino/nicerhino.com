@@ -16,6 +16,8 @@ import Link from "next/link";
 import { ConnectResult, requestCall, sendMessage } from "./actions";
 import { useActionState } from "react";
 import { track } from "@vercel/analytics";
+import nr from "../../nicerhino.json";
+import LogoCloud from "../components/sections/logocloud";
 
 const initialState: ConnectResult = {
   success: false,
@@ -25,7 +27,7 @@ const initialState: ConnectResult = {
 function Hero() {
   return (
     <section id="hero" className="relative">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-7xl mb-40">
         <div className="relative z-1 pt-14 lg:w-full lg:max-w-2xl">
           <svg
             viewBox="0 0 100 100"
@@ -47,7 +49,7 @@ function Hero() {
               </p>
               <div className="mt-10 flex items-center gap-x-6">
                 <Link
-                  href="tel:+61272574433"
+                  href={"tel:" + nr.tel}
                   className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   onClick={() => track("Call now CTA", { location: "Connect Hero" })}
                 >
@@ -80,7 +82,7 @@ function Connect() {
   return (
     <section id="message" className="relative isolate">
       <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pt-24 pb-20 sm:pt-32 lg:static lg:px-8 lg:py-48">
+        <div className="relative px-6 pt-20 pb-20 lg:static lg:px-8 lg:py-40">
           <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
             <div className="absolute inset-y-0 left-0 -z-10 w-full lg:w-1/2">
               <div
@@ -120,7 +122,7 @@ function Connect() {
                   <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href="tel:+61272574433">+61 (02) 7257 4433</a>
+                  <a href={"tel:" + nr.tel}>{nr.tel_pretty}</a>
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -129,7 +131,7 @@ function Connect() {
                   <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href="mailto:hello@nicerhino.com">hello@nicerhino.com</a>
+                  <a href={"mailto:" + nr.email}>{nr.email}</a>
                 </dd>
               </div>
             </dl>
@@ -326,6 +328,7 @@ export default function Page() {
     <main>
       {Header()}
       {Hero()}
+      {LogoCloud()}
       {Connect()}
       {Callback()}
       {Footer()}

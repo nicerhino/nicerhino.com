@@ -20,6 +20,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
+import nr from "../../nicerhino.json";
 
 const services = [
   {
@@ -43,7 +44,7 @@ const services = [
 ];
 const callsToAction = [
   { name: "Request a call", href: "/connect#callback", icon: PhoneArrowDownLeftIcon },
-  { name: "Call now", href: "tel:+61272574433", icon: PhoneIcon },
+  { name: "Call now", href: "tel:" + nr.tel, icon: PhoneIcon },
 ];
 
 export default function Navigation() {

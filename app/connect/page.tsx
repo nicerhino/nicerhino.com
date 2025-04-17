@@ -81,10 +81,10 @@ function Connect() {
 
   return (
     <section id="message" className="relative isolate">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
-        <div className="relative px-6 pt-20 pb-20 lg:static lg:px-8 lg:py-40">
-          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg overflow-x-clip">
-            <div className="absolute inset-y-0 left-0 -z-10 w-full lg:w-1/2">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2 max-lg:mt-20">
+        <div className="relative px-6 lg:static lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-xl lg:mx-0 lg:max-w-lg">
+            <div className="absolute inset-y-0 left-0 -z-10 w-full lg:w-1/2 overflow-x-clip lg:overflow-x-visible">
               <div
                 aria-hidden="true"
                 className="absolute top-[calc(100%-13rem)] -left-56 transform-gpu blur-3xl lg:top-[calc(50%-7rem)] lg:left-[max(-14rem,calc(100%-59rem))]"
@@ -246,8 +246,8 @@ function Callback() {
             business hours.
           </p>
           <form action={formAction} className="pt-10">
-            <div className="flex flex-wrap justify-center justify-items-start">
-              <div className="flex shrink-0 rounded-md mr-1 bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+            <div className="flex flex-wrap gap-1 justify-center justify-items-start">
+              <div className="flex grow shrink-0 rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                 <select
                   id="timezone"
                   name="timezone"
@@ -267,7 +267,7 @@ function Callback() {
                 />
               </div>
 
-              <div className="flex rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
+              <div className="flex grow rounded-md bg-white outline-1 -outline-offset-1 outline-gray-300 has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-indigo-600">
                 <div className="grid shrink-0 grid-cols-1 focus-within:relative">
                   <select
                     id="country"
@@ -297,7 +297,8 @@ function Callback() {
                   className="block min-w-0 grow py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6"
                 />
               </div>
-              <div className="ml-1 text-green-600 w-24 text-left text-nowrap">
+
+              <div className="text-green-600 text-left text-nowrap">
                 {state.success ? (
                   <>
                     <CheckIcon aria-hidden="true" className="size-10 pl-2" />

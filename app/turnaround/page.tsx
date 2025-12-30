@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { track } from "@vercel/analytics";
+import Button from "../components/button";
 
 const stats = [
   { id: 1, name: "Global bankruptcy annual growth rate", value: "12.5% AGR" },
@@ -150,13 +151,12 @@ function Summary() {
       </dl>
 
       <div className="mt-20 flex justify-center">
-        <Link
+        <Button
           href="/connect"
-          className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
           onClick={() => track("Start now CTA", { location: "Turnaround Summary" })}
         >
           Start now
-        </Link>
+        </Button>
       </div>
     </section>
   );

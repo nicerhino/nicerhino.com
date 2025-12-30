@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "@/app/components/footer";
+import Header from "@/app/components/header";
 import {
   BuildingOffice2Icon,
   CheckIcon,
@@ -10,14 +10,15 @@ import {
   PhoneIcon,
 } from "@heroicons/react/24/outline";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import countries from "../../countries.json";
-import timezones from "../../timezones.json";
+import countries from "@/data/countries.json";
+import nr from "@/data/nicerhino.json";
+import timezones from "@/data/timezones.json";
 import Link from "next/link";
 import { ConnectResult, requestCall, sendMessage } from "./actions";
 import { useActionState } from "react";
 import { track } from "@vercel/analytics";
-import nr from "../../nicerhino.json";
-import LogoCloud from "../components/sections/logocloud";
+import LogoCloud from "@/app/components/sections/logocloud";
+import Button from "@/app/components/button";
 
 const initialState: ConnectResult = {
   success: false,
@@ -48,13 +49,12 @@ function Hero() {
                 We&apos;re here to help with honest feedback and subject matter expertise.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <Link
+                <Button
                   href={"tel:" + nr.tel}
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   onClick={() => track("Call now CTA", { location: "Connect Hero" })}
                 >
                   Call now
-                </Link>
+                </Button>
                 <Link href="#message" className="text-sm/6 font-semibold">
                   Send a message <span aria-hidden="true">→</span>
                 </Link>
@@ -122,7 +122,7 @@ function Connect() {
                   <PhoneIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href={"tel:" + nr.tel}>{nr.tel_pretty}</a>
+                  <Link href={"tel:" + nr.tel}>{nr.tel_pretty}</Link>
                 </dd>
               </div>
               <div className="flex gap-x-4">
@@ -131,7 +131,7 @@ function Connect() {
                   <EnvelopeIcon aria-hidden="true" className="h-7 w-6 text-gray-400" />
                 </dt>
                 <dd>
-                  <a href={"mailto:" + nr.email}>{nr.email}</a>
+                  <Link href={"mailto:" + nr.email}>{nr.email}</Link>
                 </dd>
               </div>
             </dl>

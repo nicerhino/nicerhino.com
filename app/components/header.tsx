@@ -20,7 +20,7 @@ import {
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import { track } from "@vercel/analytics";
-import nr from "../../nicerhino.json";
+import nr from "@/data/nicerhino.json";
 
 const services = [
   {
@@ -123,6 +123,10 @@ export default function Navigation() {
           <Link href="/" className="text-sm/6 text-slate-200">
             Company
           </Link>
+
+          <Link href="/blog" className="text-sm/6 text-slate-200">
+            Blog
+          </Link>
         </PopoverGroup>
 
         <Link href="/" className="-m-1.5 p-1.5">
@@ -193,6 +197,12 @@ export default function Navigation() {
                   >
                     Company
                   </Link>
+                  <Link
+                    href="/blog"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-200"
+                  >
+                    Blog
+                  </Link>
                 </div>
                 <div className="py-6">
                   {/*<a
@@ -207,9 +217,9 @@ export default function Navigation() {
           </div>
           <div className="sticky bottom-0 grid grid-cols-2 divide-x divide-white/20 bg-slate-800 text-center">
             {callsToAction.map((item) => (
-              <a key={item.name} href={item.href} className="p-3 text-base/7 hover:bg-slate-700">
+              <Link key={item.name} href={item.href} className="p-3 text-base/7 hover:bg-slate-700">
                 {item.name}
-              </a>
+              </Link>
             ))}
           </div>
         </DialogPanel>

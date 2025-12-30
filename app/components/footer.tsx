@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
-import nicerhino from "../../nicerhino.json";
+import nicerhino from "@/data/nicerhino.json";
+import Link from "next/link";
 
 const navigation = {
   solutions: [
@@ -10,7 +9,10 @@ const navigation = {
     { name: "Deep Tech", href: "/deep-tech" },
   ],
   connect: [{ name: "Connect", href: "/connect" }],
-  company: [{ name: "Company", href: "/" }],
+  company: [
+    { name: "Company", href: "/" },
+    { name: "Blog", href: "/blog" },
+  ],
   social: [
     {
       name: "GitHub",
@@ -61,10 +63,14 @@ export default function Footer() {
             </p>
             <div className="flex gap-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-slate-400 hover:text-slate-200">
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="text-slate-400 hover:text-slate-200"
+                >
                   <span className="sr-only">{item.name}</span>
                   <item.icon aria-hidden="true" className="size-6" />
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -75,9 +81,9 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.solutions.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-slate-400">
+                      <Link href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -87,9 +93,9 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.connect.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-slate-400">
+                      <Link href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -101,9 +107,9 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {navigation.company.map((item) => (
                     <li key={item.name}>
-                      <a href={item.href} className="text-sm/6 text-slate-400">
+                      <Link href={item.href} className="text-sm/6 text-slate-400">
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>

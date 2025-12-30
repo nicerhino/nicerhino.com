@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 .animate-text-slide-3 {
     animation: text-slide-3 10s ease-in-out infinite;

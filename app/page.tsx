@@ -1,17 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Cta from "@/app/components/sections/cta";
+import Footer from "@/app/components/footer";
+import Header from "@/app/components/header";
+import LogoCloud from "@/app/components/sections/logocloud";
 import Link from "next/link";
 import {
   ChatBubbleLeftRightIcon,
   ArrowTrendingDownIcon,
   CubeTransparentIcon,
 } from "@heroicons/react/20/solid";
-import Cta from "./components/cta";
 import { track } from "@vercel/analytics";
-import LogoCloud from "./components/sections/logocloud";
 
 const features = [
   {
@@ -116,9 +116,9 @@ function WhatWeDo() {
                 <dd className="mt-4 flex flex-auto flex-col text-base/7 text-slate-400">
                   <p className="flex-auto">{feature.description}</p>
                   <p className="mt-6">
-                    <a href={feature.href} className="text-sm/6 font-semibold text-indigo-600">
+                    <Link href={feature.href} className="text-sm/6 font-semibold text-indigo-600">
                       Learn more <span aria-hidden="true">→</span>
-                    </a>
+                    </Link>
                   </p>
                 </dd>
               </div>

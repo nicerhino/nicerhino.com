@@ -1,10 +1,10 @@
 "use client";
 
-import Footer from "../components/footer";
-import Header from "../components/header";
+import Footer from "@/app/components/footer";
+import Header from "@/app/components/header";
+import Cta from "@/app/components/sections/cta";
 import Link from "next/link";
 import Image from "next/image";
-import Cta from "../components/cta";
 import { CubeTransparentIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
 import { BeakerIcon, WrenchScrewdriverIcon, CodeBracketIcon } from "@heroicons/react/20/solid";
 

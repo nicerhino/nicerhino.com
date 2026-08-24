@@ -1,11 +1,11 @@
 import nextMdx from "@next/mdx";
-import remarkFrontmatter from "remark-frontmatter";
-import remarkMdxFrontmatter from "remark-mdx-frontmatter";
 
+// Turbopack requires loader options to be serializable, so plugins are passed
+// as module-name strings; @next/mdx's loader resolves them at build time.
 const withMdx = nextMdx({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
+    remarkPlugins: ["remark-frontmatter", "remark-mdx-frontmatter"],
   },
 });
 

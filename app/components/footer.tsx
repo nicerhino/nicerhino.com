@@ -11,7 +11,7 @@ const navigation = {
   connect: [{ name: "Connect", href: "/connect" }],
   company: [
     { name: "Company", href: "/" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
   ],
   social: [
     {

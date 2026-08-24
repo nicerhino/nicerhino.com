@@ -124,9 +124,9 @@ export default function Navigation() {
             Company
           </Link>
 
-          <Link href="/blog" className="text-sm/6 text-slate-200">
+          {/*<Link href="/blog" className="text-sm/6 text-slate-200">
             Blog
-          </Link>
+          </Link>*/}
         </PopoverGroup>
 
         <Link href="/" className="-m-1.5 p-1.5">
@@ -197,12 +197,12 @@ export default function Navigation() {
                   >
                     Company
                   </Link>
-                  <Link
+                  {/*<Link
                     href="/blog"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-slate-200"
                   >
                     Blog
-                  </Link>
+                  </Link>*/}
                 </div>
                 <div className="py-6">
                   {/*<a
